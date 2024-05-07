@@ -1,0 +1,19 @@
+<div class="ad-banner" [ngStyle]="{'background-color': backgroundColor, 'width.px': adSize, 'height.px': adSize, 'max-width.px': maxSize, 'max-height.px': maxSize, 'overflow': 'hidden', 'position': 'relative'}">
+  <img [src]="adImage" alt="Advertisement">
+  <button class="settings-button" (click)="toggleSettings()">Ustawienia</button>
+  <div *ngIf="showSettings" class="settings-container">
+    <div class="ad-details">
+      <label for="adSize">Ad Size:</label> 
+      <select id="adSize" [(ngModel)]="adSize">
+        <option value="small">Mała</option>
+        <option value="medium">Średnia</option>
+        <option value="large">Duża</option>
+      </select>
+    
+      <label for="imageUpload">Wybierz zdjęcie:</label>
+      <input type="file" id="imageUpload" (change)="setAdImage($event)">
+    
+      <button (click)="saveAdChanges()">Zapisz zmiany</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,100 @@
+.task-box {
+  min-height: 400px;
+  height: 100%;
+  width: 417px;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.input-task {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.save-input {
+  padding: 10px;
+  font-size: 18px;
+}
+
+.save-btn {
+  padding: 10px;
+  margin-left: 30px;
+  border: 0;
+  border-radius: 4px;
+  background: blue;
+  color: #fff;
+}
+
+.input-task-text {
+  border: 0;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.input-task-button {
+  border: 0;
+  border-radius: 22px;
+  font-size: 16px;
+  background-color: rgba(199, 210, 254, 1);
+  color: #352f5b;
+  cursor: pointer;
+  margin-left: 10px;
+  width: 43px;
+  padding: 1px;
+  margin-bottom: 10px;
+  height: 43px;
+}
+
+.task {
+  margin-top: 10px;
+  font-size: 22px;
+  padding: 10px;
+}
+
+.input-add {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 80%;
+}
+
+.task-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+select {
+  padding: 5px;
+  background: #fff;
+  border: 0;
+}
+
+.task:nth-child(even) {
+  background: rgb(55, 57, 129);
+}
+
+.edit-btn {
+  background: blue;
+  border: 0;
+  padding: 10px;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.remove-task-button {
+  border-radius: 22px;
+  font-size: 16px;
+  background-color: rgba(194, 37, 37, 1);
+  color: #fff;
+  cursor: pointer;
+  margin-left: 10px;
+  width: 30px;
+  padding: 6px;
+  margin-bottom: 10px;
+  border: 0;
+}

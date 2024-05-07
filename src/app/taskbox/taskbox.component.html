@@ -1,0 +1,33 @@
+<div class="task-box" [ngStyle]="{'background-color': backgroundColor}">
+  <h2>{{headline}}</h2>
+  <div class="input-task" *ngIf="dodawanie">
+    <div class="input-add">
+      <input type="text" class="input-task-text" [(ngModel)]="newTaskName" placeholder="Dodaj zadanie">
+      <input type="text" class="input-task-text" [(ngModel)]="newTaskCategory" placeholder="Kategoria zadania">
+      <input type="date" class="input-task-text" [(ngModel)]="newTaskStartDate" placeholder="Data rozpoczęcia">
+      <input type="date" class="input-task-text" [(ngModel)]="newTaskEndDate" placeholder="Data zakończenia">
+    </div>
+    <button class="input-task-button" (click)="addTask()">+</button>
+  </div>
+  <div class="tasks">
+    <div *ngFor="let task of tasks" class="task">
+      <div *ngIf="!task.isEditing; else editTemplate" class="task-flex">
+        <span>{{ task.name }}</span>
+        <span>{{ task.category }}</span>
+        <span *ngIf="task.startDate">{{ task.startDate | date:'shortDate' }}</span>
+        <span *ngIf="task.endDate">{{ task.endDate | date:'shortDate' }}</span>
+        <select [(ngModel)]="task.status" (change)="updateTaskStatus(task.id, task.status)">
+          <option *ngFor="let status of statuses" [value]="status">{{ status }}</option>
+        </select>
+        <div>
+          <button class="edit-btn" (click)="editTask(task.id)">Edytuj</button>
+          <button class="remove-task-button" (click)="removeTask(task.id)">-</button>
+        </div>
+      </div>
+      <ng-template #editTemplate>
+        <input [(ngModel)]="task.name" class="save-input">
+        <button class="save-btn" (click)="saveTask(task.id, task.name)">Zapisz</button>
+      </ng-template>
+    </div>
+  </div>
+</div>
